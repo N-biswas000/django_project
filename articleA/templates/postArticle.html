@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Your Article</title>
+</head>
+<body>
+<form class="form-inline" action="{% url 'postmyArticle' %}" method="POST" >
+    {% csrf_token %}
+<div class="form-group">
+    <label for="content"><h3>Post Your Article here!</h3></label>
+    <div>
+        <textarea class="form-control" rows="3" id="heading" name="heading" required placeholder="Please provide heading of the article (Words should be less than 20)"></textarea>
+    </div>
+  <textarea class="form-control" rows="10" id="content" name="content" required placeholder="Please provide content of the article (Words should be less than 500)"></textarea>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</div>
+</form>
+</body>
+</html>
+{% endblock %}
