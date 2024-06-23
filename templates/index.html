@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<title>Home</title>
+<!-- Page Content -->
+<div class="container">
+  {% if allArticles %}
+     {% for all in allArticles %}
+         <h6>{{all.id}}</h6><h6>{{all.date}}</h6><h6>by : {{all.author_id}}</h6>
+         <h6>Headline : {{all.article_heading}}</h6><br>
+         <h6>{{all.article_content}}</h6>
+     {% endfor %}
+  {% endif %}
+</div>
+
+{% endblock %}
